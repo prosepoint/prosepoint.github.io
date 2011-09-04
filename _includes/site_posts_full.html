@@ -1,0 +1,7 @@
+    {% for post in site.posts %}
+      <div class="node node-teaser node-story node-story-teaser clear-block">
+        <h2 class="node-title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+        <div class="meta"><span class="submitted">{% assign date_to_ordinalize = post.date %}{% include date_ordinal.html %}</span></div>
+        <div class="content">{{ post.content }}</div>
+      </div>
+    {% endfor %}

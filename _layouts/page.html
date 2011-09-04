@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{% if page.html_title %}{{ page.html_title }}{% else %}{{ page.title }} | {{ page.site_name }}{% endif %}</title>
+  {% if page.meta_description %}<meta name="description" content="{{ page.meta_description }}" />{% endif %}
+  <link rel="shortcut icon" href="{{ page.base_url }}images/favicon.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" media="all" href="{{ page.base_url }}style.css" />
+  <!--[if lte IE 6]>
+    <link rel="stylesheet" href="{{ page.base_url }}ie6.css" type="text/css">  
+  <![endif]-->
+  {% if page.piwik_base and page.piwik_site_id %}{% include piwik_async.html %}{% endif %}
+  <script type="text/javascript"><!-- /* Needed to avoid Flash of Unstyled Content in IE */ --> </script>
+</head>
+{% if page.sidebar_right_blurb_content or page.sidebar_right_site_posts_titles or page.sidebar_right_external_posts_titles %}{% assign sidebar_right = true %}{% endif %}
+<body class="{% if sidebar_right %}sidebar-right one-sidebar {% else %}no-sidebars {% endif %}with-site-name with-slogan with-primary no-breadcrumb">
+  <div id="page">
+    <div id="header"><div id="header-inner">
+
+      <div id="header-1">
+        <div id="logo-title">
+          <div id="name-and-slogan">
+              <div id="site-name">
+                <a href="{{ page.base_url }}" title="Home" rel="home"><span>{{ page.site_name }}</span></a>
+              </div>
+
+              <div id="site-slogan">{{ page.site_slogan }}</div>
+            
+          </div> <!-- /name-and-slogan -->
+        </div> <!-- /logo-title -->
+      </div> <!-- /header-1 -->
+
+        <div id="navigation">
+          {% if page.google_sitesearch %}
+            <div id="navigation-region">
+              {% include google_sitesearch.html %}
+            </div>
+          {% endif %}
+
+          {% if page.primary_links %}
+          <div id="primary" class="clear-block">
+            <ul class="links primary-links">
+              {% if page.primary_links == 'backlink' %}
+              <li class="first last"><a href="http://www.prosepoint.net" title="">Back to main website</a></li>
+              {% else %}
+              <li class="menu-451 first"><a href="http://demo.prosepoint.net" title="">Demo</a></li>
+              <li class="menu-627"><a href="http://www.prosepoint.net/pricing" title="">Pricing</a></li>
+              <li class="menu-584"><a href="http://www.prosepoint.net/documentation" title="ProsePoint Express User Guide">Documentation</a></li>
+              <li class="menu-796"><a href="http://www.prosepoint.net/showcase" title="Showcase">Showcase</a></li>
+              <li class="menu-246"><a href="http://www.prosepoint.net/node" title="">Blog</a></li>
+              <li class="menu-235 last"><a href="http://www.prosepoint.net/contact" title="">Contact us</a></li>
+              {% endif %}
+            </ul>
+          </div>
+          {% endif %}
+
+          {% if page.secondary_links %}
+          <div id="secondary" class="clear-block">
+            <ul class="links secondary-links">
+              {% if page.secondary_links == 'backlink' %}
+              <li class="first last"><a href="http://www.prosepoint.net" title="">Back to main website</a></li>
+              {% else %}
+              <li class="menu-232 first"><a href="http://www.prosepoint.net/sign-up" title="Sign up for an account">Sign up</a></li>
+              <li class="menu-231 last"><a href="http://www.prosepoint.net/login" title="">Login</a></li>
+              {% endif %}
+            </ul>
+          </div>
+          {% endif %}
+
+        </div> <!-- /navigation -->
+
+    </div></div> <!-- /header-inner /header -->
+        
+    <div id="container" class="clear-block">
+
+      <div id="main" class="column"><div id="main-inner">
+        <div id="content"><div id="content-inner"><div id="content-inner-1"><div id="content-inner-2">
+          {% if page.title %}<h1 class="title" id="page-title">{{ page.title }}</h1>{% endif %}
+          <div id="content-content" class="clear-block">
+
+            {% if page.date %}              
+              <div class="node node-full node-story node-story-full clear-block">
+                <div class="meta"><span class="submitted">{% assign date_to_ordinalize = page.date %}{% include date_ordinal.html %}</span></div>
+                <div class="content">
+                  {{ page.content }}
+                </div>
+              </div> <!-- /node -->
+            {% else %}
+              {{ page.content }}
+            {% endif %}
+            {% if page.content_site_posts_full %}{% include site_posts_full.html %}{% endif %}
+          </div> <!-- /content-content -->
+        </div></div></div></div> <!-- /content-inner-2 /content-inner-1 /content-inner /content -->
+
+        {% if sidebar_right %}
+          <div id="sidebar-right" class="column sidebar"><div id="sidebar-right-inner">
+            {% include sidebar_right.html %}
+          </div></div> <!-- /sidebar-right-inner /sidebar-right -->
+        {% endif %}
+      </div></div> <!-- /main-inner /main -->
+    </div> <!-- /container -->
+
+    <div id="footer"><div id="footer-inner" class="clear-block">
+
+      <div id="footer-column-0">
+        <div id="footer-message">
+          ProsePoint Express is a project of <a href="http://thinkleft.com.au">ThinkLeft</a> (ABN 20 573 348 425)<br />
+          <br />
+          Newspaper software CMS | Magazine publishing | Web design<br />
+          Content management systems | News website publishing
+        </div> <!-- /footer-message -->
+      </div> <!-- /footer-column-0 -->
+      
+      <div id="footer-column-1">
+        <div id="footer-1"><div id="footer-1-inner">
+          <div id="block-menu-menu-footer-links" class="block block-menu"><div class="block-inner"><div class="block-inner-1">
+
+            <div class="content">
+              <ul class="menu">
+                <li class="leaf first"><a href="http://www.prosepoint.net/" title="">Home</a></li>
+                <li class="leaf"><a href="http://www.prosepoint.net/pricing" title="">Plans and Pricing</a></li>
+                <li class="leaf"><a href="http://www.prosepoint.net/terms-and-conditions" title="">Terms and Conditions</a></li>
+                <li class="leaf last"><a href="http://www.prosepoint.net/fair-use-policy" title="">Fair Use Policy</a></li>
+              </ul>
+            </div>
+          </div></div></div>
+        </div></div>
+
+        <div id="footer-2"><div id="footer-2-inner">
+          <div id="block-menu-menu-footer-links-2" class="block block-menu"><div class="block-inner"><div class="block-inner-1">
+            <div class="content">
+              <ul class="menu">
+                <li class="leaf first"><a href="http://www.prosepoint.net/documentation/frequently-asked-questions" title="">Frequently Asked Questions</a></li>
+                <li class="leaf"><a href="http://www.prosepoint.net/documentation" title="">Documentation</a></li>
+                <li class="leaf"><a href="http://www.prosepoint.net/documentation/how-to" title="">How To&#039;s</a></li>
+                <li class="leaf last"><a href="http://twitter.com/prosepoint" title="">Twitter</a></li>
+              </ul>
+            </div>
+          </div></div></div>
+        </div></div>
+      </div> <!-- /footer-column-1 -->
+
+    </div></div> <!-- /footer-inner /footer -->
+
+  </div> <!-- /page -->
+</body>
+</html>

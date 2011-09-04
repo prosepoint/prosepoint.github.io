@@ -1,0 +1,8 @@
+/* Turn off transparent images */
+#header, #primary li a, #primary li a:hover, #content-inner-2, .sidebar .block-inner-1, input.button, input.form-submit, .pager li a, .pager li.pager-current,
+ul.tabs, #wb-admin-menu, #wb-admin-menu li li,
+#postscript-two .block-inner-1, .front #demo, .front #sign-up, .front #buttons a:hover 
+{ background-image: none; }
+
+#header-inner { background: url('images/pp_overlay.png') right 8px no-repeat; }
+#navigation-region { margin-top: -4px; }
