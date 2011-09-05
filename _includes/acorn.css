@@ -88,6 +88,7 @@ ul.secondary li a, ul.secondary li.active a, ul.secondary li a:hover { border-co
 #footer-1, #footer-2 { float: left; }
 #footer-1-inner, #footer-2-inner { margin: 0 40px 0 0; }
  
+#footer .block { margin-bottom: 20px; }
 #footer .block-title { color: #fff; }
 #footer .block h2.block-title, #footer .block h3
 { font-size: 1.3333em; line-height: 1.25; font-weight: normal; }
@@ -275,3 +276,41 @@ a.big-button:hover { background-image: url('images/button_glas1_ovr.png'); }
 #block-block-2 a:hover img { border: 1px solid #888; }
 
 .page-contact #content-content { max-width: 45em; }
+
+/* pricing page  */
+.ppe-pricing p, .ppe-pricing ul { max-width: 45em; }
+.underline { text-decoration: underline; }
+#ppe-pricing { width: auto; border: 0; }
+#ppe-pricing tr { border: 0; }
+#ppe-pricing th, #ppe-pricing td { vertical-align: baseline; padding: 0 5px; border-bottom: 2px solid #f4f4f4; color: #000; } 
+#ppe-pricing th { padding: 5px 5px; }
+#ppe-pricing tr, #ppe-pricing tr:hover, #ppe-pricing td, #ppe-pricing th { background-image: none; }
+#ppe-pricing img { vertical-align: middle; }
+
+#ppe-pricing .column-1 { width: 230px; } 
+#ppe-pricing .column-2,
+#ppe-pricing .column-3,
+#ppe-pricing .column-4,
+#ppe-pricing .column-5 { width: 150px; } 
+#ppe-pricing .separator .column { padding-bottom: 20px; }
+
+#ppe-pricing th.column-1 { background-color: #d6d6d6; } 
+#ppe-pricing th.column-2 { background-color: #dfdfb8; } 
+#ppe-pricing th.column-3 { background-color: #b8dfb8; } 
+#ppe-pricing th.column-4 { background-color: #b8c7df; } 
+#ppe-pricing th.column-5 { background-color: #dfb9b8; } 
+#ppe-pricing .column-1 { font-weight: bold; background-color: #eaeaea; color: #333; } 
+#ppe-pricing .column-2 { background-color: #f2f2d9; } 
+#ppe-pricing .column-3 { background-color: #d9f2d9; } 
+#ppe-pricing .column-4 { background-color: #d9e5f2; } 
+#ppe-pricing .column-5 { background-color: #f2dad9; }
+#ppe-pricing .row-1 .column-1 { color: #000; } 
+
+#ppe-pricing .row-price .column-1 { text-align: left; }
+#ppe-pricing .price { font-weight: bold; display: block; font-size: 1.16667em; line-height: 1.42857; margin: 0; }
+
+#ppe-pricing .row-value .column { border-bottom: 0px; }
+#ppe-pricing .row-value .column-2, #ppe-pricing .row-value .column-3, #ppe-pricing .row-value .column-4, #ppe-pricing .row-value .column-5 { font-style: italic; }
+
+#ppe-pricing .row-sign-up .column { vertical-align: middle; padding: 10px 5px; text-align: center; }
+#ppe-pricing .row-sign-up .overlay { position: absolute; z-index: 10; width: 470px; }
