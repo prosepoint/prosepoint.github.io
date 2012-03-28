@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="{{ page.base_url }}ie6.css" type="text/css">  
   <![endif]-->
   {% if page.piwik_base and page.piwik_site_id %}{% include piwik_async.html %}{% endif %}
+  {% if page.mixpanel_token %}{% include mixpanel.html %}{% endif %}
   <script type="text/javascript"><!-- /* Needed to avoid Flash of Unstyled Content in IE */ --> </script>
 </head>
-{% if page.sidebar_right_blurb_content or page.sidebar_right_site_posts_titles or page.sidebar_right_external_posts_titles %}{% assign sidebar_right = true %}{% endif %}
+{% if page.sidebar_right_blurb_content or page.sidebar_right_site_posts_titles or page.sidebar_right_external_posts_titles or page.sidebar_right_featured_showcases %}{% assign sidebar_right = true %}{% endif %}
+{% if page.postscript_two_external_posts_titles %}{% assign postscript_two = true %}{% endif %}
 <body class="{% if sidebar_right %}sidebar-right one-sidebar {% else %}no-sidebars {% endif %}with-site-name with-slogan with-primary no-breadcrumb">
   <div id="page">
     <div id="header"><div id="header-inner">
@@ -98,6 +100,12 @@
           </div></div> <!-- /sidebar-right-inner /sidebar-right -->
         {% endif %}
       </div></div> <!-- /main-inner /main -->
+
+      {% if postscript_two %}
+        <div id="postscript-two"><div id="postscript-two-inner">
+          {% include postscript_two.html %}
+        </div></div> <!-- /postscript-two-inner /postscript-two -->
+      {% endif %}
     </div> <!-- /container -->
 
     <div id="footer"><div id="footer-inner" class="clear-block">
