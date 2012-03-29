@@ -1,0 +1,11 @@
+#site-name a { display: inline-block; background-color: #35569b; 
+-ms-filter:"progid:DXImageTransform.Microsoft.Chroma(Color=#35569b) progid:DXImageTransform.Microsoft.DropShadow(OffX=2, OffY=2, Color=#000000)";
+}
+
+#site-name a:hover { 
+-ms-filter:"progid:DXImageTransform.Microsoft.Chroma(Color=#35569b) progid:DXImageTransform.Microsoft.DropShadow(OffX=4, OffY=4, Color=#000000)";
+}
+
+#primary li a { display: inline-block; background-color: #2f4a83;
+-ms-filter:"progid:DXImageTransform.Microsoft.Chroma(Color=#2f4a83) progid:DXImageTransform.Microsoft.DropShadow(OffX=2, OffY=2, Color=#000000)";
+}

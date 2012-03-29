@@ -1,0 +1,27 @@
+thead th { _background-color: #555; }
+tr td { _border-top: 1px solid #888; _border-bottom: 1px solid #888; }
+tr.odd td { _background-color: #f8f8f8; }
+tr.even td { _background-color: #f0f0f0; }
+
+#site-name a:hover { display: inline-block; background-color: #35569b;
+filter: progid:DXImageTransform.Microsoft.Chroma(Color=#35569b)
+        progid:DXImageTransform.Microsoft.DropShadow(OffX=4, OffY=0, Color=#000000);
+}
+
+#primary li a { display: inline-block; background-color: #2f4a83;
+filter: progid:DXImageTransform.Microsoft.Chroma(Color=#2f4a83)
+        progid:DXImageTransform.Microsoft.DropShadow(OffX=2, OffY=2, Color=#000000);
+}
+
+#content-content { _height: 200px; }
+
+/* A bizarre IE6 bug */
+.sidebar-left #main, .two-sidebars #main { _position: relative; _left: -40px; _margin-right: -20px; }
+
+form div.form-item-with-label label { _left: -160px; }
+form .container-inline div.form-item-with-label label { _left: 0px; }
+a.tabledrag-handle .handle { _background-position: 0 6px; }
+
+#wb-editor-select li a { padding: 0 6px 0; }
+#ppe-pricing .row-sign-up .overlay { _width: 330px; width: 320px; }
+

@@ -6,21 +6,31 @@
   {% if page.meta_description %}<meta name="description" content="{{ page.meta_description }}" />{% endif %}
   <link rel="shortcut icon" href="{{ page.base_url }}images/favicon.ico" type="image/x-icon" />
   <link type="text/css" rel="stylesheet" media="all" href="{{ page.base_url }}style.css" />
-  <!--[if lte IE 6]>
-    <link rel="stylesheet" href="{{ page.base_url }}ie6.css" type="text/css">  
+  <!--[if lte IE 7]>
+    <link rel="stylesheet" href="{{ page.base_url }}ie.css" type="text/css">  
+  <![endif]-->
+  <!--[if gte IE 8]>
+    <link rel="stylesheet" href="{{ page.base_url }}ie8.css" type="text/css">  
   <![endif]-->
   {% if page.piwik_base and page.piwik_site_id %}{% include piwik_async.html %}{% endif %}
   {% if page.mixpanel_token %}{% include mixpanel.html %}{% endif %}
+  <script type="text/javascript" src="{{ page.base_url }}scripts.js"></script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  $(document).ready(function() { $('#logo').pngFix(); });  
+  //--><!]]>
+  </script>
   <script type="text/javascript"><!-- /* Needed to avoid Flash of Unstyled Content in IE */ --> </script>
 </head>
 {% if page.sidebar_right_blurb_content or page.sidebar_right_site_posts_titles or page.sidebar_right_external_posts_titles or page.sidebar_right_featured_showcases %}{% assign sidebar_right = true %}{% endif %}
 {% if page.postscript_two_external_posts_titles %}{% assign postscript_two = true %}{% endif %}
-<body class="{% if sidebar_right %}sidebar-right one-sidebar {% else %}no-sidebars {% endif %}with-site-name with-slogan with-primary no-breadcrumb">
+<body class="{% if sidebar_right %}sidebar-right one-sidebar {% else %}no-sidebars {% endif %}with-site-name with-logo with-slogan with-primary no-breadcrumb no-tabs">
   <div id="page">
     <div id="header"><div id="header-inner">
 
       <div id="header-1">
         <div id="logo-title">
+          <a href="{{ page.base_url }}" id="logo"><img src="{{ page.base_url }}images/logo.png" alt="Home" title="{{ page.site_name }}" /></a>
           <div id="name-and-slogan">
               <div id="site-name">
                 <a href="{{ page.base_url }}" title="Home" rel="home"><span>{{ page.site_name }}</span></a>
@@ -33,11 +43,6 @@
       </div> <!-- /header-1 -->
 
         <div id="navigation">
-          {% if page.google_sitesearch %}
-            <div id="navigation-region">
-              {% include google_sitesearch.html %}
-            </div>
-          {% endif %}
 
           {% if page.primary_links %}
           <div id="primary" class="clear-block">
@@ -45,12 +50,10 @@
               {% if page.primary_links == 'backlink' %}
               <li class="first last"><a href="http://www.prosepoint.net" title="">Back to main website</a></li>
               {% else %}
-              <li class="menu-451 first"><a href="http://demo.prosepoint.net" title="">Demo</a></li>
-              <li class="menu-627"><a href="http://www.prosepoint.net/pricing" title="">Pricing</a></li>
-              <li class="menu-584"><a href="http://www.prosepoint.net/documentation" title="ProsePoint Express User Guide">Documentation</a></li>
+              <li class="menu-627 first"><a href="http://www.prosepoint.net/pricing" title="">Pricing</a></li>
               <li class="menu-796"><a href="http://www.prosepoint.net/showcase" title="Showcase">Showcase</a></li>
-              <li class="menu-246"><a href="http://www.prosepoint.net/node" title="">Blog</a></li>
-              <li class="menu-235 last"><a href="http://www.prosepoint.net/contact" title="">Contact us</a></li>
+              <li class="menu-584"><a href="http://www.prosepoint.net/documentation" title="ProsePoint Express User Guide">Documentation</a></li>
+              <li class="menu-997"><a href="http://www.prosepoint.net/articles" title="Articles">Articles</a></li>
               {% endif %}
             </ul>
           </div>
@@ -62,7 +65,9 @@
               {% if page.secondary_links == 'backlink' %}
               <li class="first last"><a href="http://www.prosepoint.net" title="">Back to main website</a></li>
               {% else %}
-              <li class="menu-232 first"><a href="http://www.prosepoint.net/sign-up" title="Sign up for an account">Sign up</a></li>
+              <li class="menu-246 first"><a href="http://www.prosepoint.net/node" title="">Blog</a></li>
+              <li class="menu-235"><a href="http://www.prosepoint.net/contact" title="">Contact us</a></li>
+              <li class="menu-232"><a href="http://www.prosepoint.net/sign-up" title="Sign up for an account">Sign up</a></li>
               <li class="menu-231 last"><a href="http://www.prosepoint.net/login" title="">Login</a></li>
               {% endif %}
             </ul>
