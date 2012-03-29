@@ -83,7 +83,7 @@ background-image: -ms-linear-gradient(top, #9d9889, #d9d6ce);
 
 #page-title { padding: 10px 20px; color: #111; background: #fff; margin: 0 -20px; }
 .with-breadcrumb #page-title { padding-top: 0; }
-.no-tabs #page-title, .in-maintenance #page-title { border-bottom: 5px solid #666; margin-bottom: 5px; }
+.no-tabs #page-title, .in-maintenance #page-title { border-bottom: 5px solid #666; margin-bottom: 15px; }
 
 div.tabs { margin: 0 -20px 10px -20px; }
 ul.tabs { height: 30px; background: #444; color: #eee; margin: 0; padding: 0 10px; }
