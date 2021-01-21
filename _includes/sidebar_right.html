@@ -1,12 +1,12 @@
-{% if page.sidebar_right_blurb_content %}
+{% if layout.sidebar_right_blurb_content %}
 <div id="" class="block block-ppe"><div class="block-inner"><div class="block-inner-1">
-  {% if page.sidebar_right_blurb_title %}<h2 class="block-title">{{ page.sidebar_right_blurb_title }}</h2>{% endif %}
+  {% if layout.sidebar_right_blurb_title %}<h2 class="block-title">{{ layout.sidebar_right_blurb_title }}</h2>{% endif %}
   <div class="content">
-    {{ page.sidebar_right_blurb_content }}
+    {{ layout.sidebar_right_blurb_content }}
   </div>
 </div></div></div>
 {% endif %}
-{% if page.sidebar_right_site_posts_titles %}
+{% if layout.sidebar_right_site_posts_titles %}
 <div id="" class="block block-ppe"><div class="block-inner"><div class="block-inner-1">
   <h2 class="block-title">Recent Updates</h2>
   <div class="content">
@@ -14,7 +14,7 @@
   </div>
 </div></div></div>
 {% endif %}
-{% if page.sidebar_right_external_posts_titles %}
+{% if layout.sidebar_right_external_posts_titles %}
 <div id="" class="block block-ppe"><div class="block-inner"><div class="block-inner-1">
   <h2 class="block-title">{{ page.external_posts_title }}</h2>
   <div class="content">
@@ -22,7 +22,7 @@
   </div>
 </div></div></div>
 {% endif %}
-{% if page.sidebar_right_featured_showcases %}
+{% if layout.sidebar_right_featured_showcases %}
 <div id="" class="block block-ppe"><div class="block-inner"><div class="block-inner-1">
   <h2 class="block-title">Featured Showcases</h2>
   <div class="content">

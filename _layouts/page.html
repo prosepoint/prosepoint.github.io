@@ -2,19 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>{% if page.html_title %}{{ page.html_title }}{% else %}{{ page.title }} | {{ page.site_name }}{% endif %}</title>
+  <title>{% if page.html_title %}{{ page.html_title }}{% else %}{{ page.title }} | {{ layout.site_name }}{% endif %}</title>
   {% if page.meta_description %}<meta name="description" content="{{ page.meta_description }}" />{% endif %}
-  <link rel="shortcut icon" href="{{ page.base_url }}images/favicon.ico" type="image/x-icon" />
-  <link type="text/css" rel="stylesheet" media="all" href="{{ page.base_url }}style.css" />
+  <link rel="shortcut icon" href="{{ layout.base_url }}images/favicon.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" media="all" href="{{ layout.base_url }}style.css" />
   <!--[if lte IE 7]>
-    <link rel="stylesheet" href="{{ page.base_url }}ie.css" type="text/css">  
+    <link rel="stylesheet" href="{{ layout.base_url }}ie.css" type="text/css">  
   <![endif]-->
   <!--[if gte IE 8]>
-    <link rel="stylesheet" href="{{ page.base_url }}ie8.css" type="text/css">  
+    <link rel="stylesheet" href="{{ layout.base_url }}ie8.css" type="text/css">  
   <![endif]-->
-  {% if page.piwik_base and page.piwik_site_id %}{% include piwik_async.html %}{% endif %}
-  {% if page.mixpanel_token %}{% include mixpanel.html %}{% endif %}
-  <script type="text/javascript" src="{{ page.base_url }}scripts.js"></script>
+  <script type="text/javascript" src="{{ layout.base_url }}scripts.js"></script>
   <script type="text/javascript">
   <!--//--><![CDATA[//><!--
   $(document).ready(function() { $('#logo').pngFix(); });  
@@ -22,7 +20,7 @@
   </script>
   <script type="text/javascript"><!-- /* Needed to avoid Flash of Unstyled Content in IE */ --> </script>
 </head>
-{% if page.sidebar_right_blurb_content or page.sidebar_right_site_posts_titles or page.sidebar_right_external_posts_titles or page.sidebar_right_featured_showcases %}{% assign sidebar_right = true %}{% endif %}
+{% if layout.sidebar_right_blurb_content or layout.sidebar_right_site_posts_titles or layout.sidebar_right_external_posts_titles or layout.sidebar_right_featured_showcases %}{% assign sidebar_right = true %}{% endif %}
 {% if page.postscript_two_external_posts_titles %}{% assign postscript_two = true %}{% endif %}
 <body class="{% if sidebar_right %}sidebar-right one-sidebar {% else %}no-sidebars {% endif %}with-site-name with-logo with-slogan with-primary no-breadcrumb no-tabs">
   <div id="page">
@@ -30,13 +28,13 @@
 
       <div id="header-1">
         <div id="logo-title">
-          <a href="{{ page.base_url }}" id="logo"><img src="{{ page.base_url }}images/logo.png" alt="Home" title="{{ page.site_name }}" /></a>
+          <a href="{{ layout.base_url }}" id="logo"><img src="{{ layout.base_url }}images/logo.png" alt="Home" title="{{ layout.site_name }}" /></a>
           <div id="name-and-slogan">
               <div id="site-name">
-                <a href="{{ page.base_url }}" title="Home" rel="home"><span>{{ page.site_name }}</span></a>
+                <a href="{{ layout.base_url }}" title="Home" rel="home"><span>{{ layout.site_name }}</span></a>
               </div>
 
-              <div id="site-slogan">{{ page.site_slogan }}</div>
+              <div id="site-slogan">{{ layout.site_slogan }}</div>
             
           </div> <!-- /name-and-slogan -->
         </div> <!-- /logo-title -->
@@ -44,10 +42,10 @@
 
         <div id="navigation">
 
-          {% if page.primary_links %}
+          {% if layout.primary_links %}
           <div id="primary" class="clear-block">
             <ul class="links primary-links">
-              {% if page.primary_links == 'backlink' %}
+              {% if layout.primary_links == 'backlink' %}
               <li class="first last"><a href="http://www.prosepoint.net" title="">Back to main website</a></li>
               {% else %}
               <li class="menu-627 first"><a href="http://www.prosepoint.net/pricing" title="">Pricing</a></li>
@@ -59,10 +57,10 @@
           </div>
           {% endif %}
 
-          {% if page.secondary_links %}
+          {% if layout.secondary_links %}
           <div id="secondary" class="clear-block">
             <ul class="links secondary-links">
-              {% if page.secondary_links == 'backlink' %}
+              {% if layout.secondary_links == 'backlink' %}
               <li class="first last"><a href="http://www.prosepoint.net" title="">Back to main website</a></li>
               {% else %}
               <li class="menu-246 first"><a href="http://www.prosepoint.net/node" title="">Blog</a></li>
